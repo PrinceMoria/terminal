@@ -1,4 +1,4 @@
-# terminal. What is it?
+# What is terminal?
 A Moderation Bot, made for Discord. Coded in Javascript.
 
 # Who created terminal?
