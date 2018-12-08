@@ -29,8 +29,9 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("removerole")) {
         message.channel.send("**Removerole:** A command that removes a role from an user. Usage: >removerole (user) (rolename)")
     } else {
+        if (args) {
 message.channel.send("That isn't a command.")
-}}}}}}
+}}}}}}}
 
 };
 
