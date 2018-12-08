@@ -38,4 +38,4 @@ client.on('message', message => {
   if (cmd) cmd.run(client, message, args, ops);
 });
 
-client.login("not for your eyes, no");
+client.login(config.token);
