@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
   await(rMember.addRole(gRole.id));
 
   try{
-    await message.channel.send(`:white_check_mark: Added ${gRole.name} to ${rMember}`)
+    await message.channel.send(`:white_check_mark: Added ${gRole.name} to ${rMember}.`)
   }catch(e){
     console.log(e.stack);
   }
