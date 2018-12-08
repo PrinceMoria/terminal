@@ -2,19 +2,19 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-  if (!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + ":x: You do not have sufficient permissions to purge messages.");
+  if (!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + " You do not have sufficient permissions to purge messages.");
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  if(!rMember) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + " :x: Couldn't find that user");
+  if(!rMember) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + "  Couldn't find that user");
   let role = args.join(" ").slice(22);
-  if(!role) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + ":x: Please supply a role");
+  if(!role) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + " Please supply a role");
   let gRole = message.guild.roles.find(`name`, role);
-  if(!gRole) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + ":x: That role doesn't exist, if it does exist: check your spelling");
+  if(!gRole) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + " That role doesn't exist, if it does exist: check your spelling");
 
-  if(rMember.roles.has(gRole.id)) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + ":x: This person already has that role.");
+  if(rMember.roles.has(gRole.id)) return message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + " This person already has that role.");
   await(rMember.addRole(gRole.id));
 
   try{
-    await message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + `:white_check_mark: Added ${gRole.name} to ${rMember}.`)
+    await message.channel.send("`/" + message.guild + "/" + message.channel + "/`" + ` Added ${gRole.name} to ${rMember}.`)
   }catch(e){
     console.log(e.stack);
   }
