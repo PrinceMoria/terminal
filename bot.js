@@ -13,14 +13,14 @@ fs.readdir("./commands/", (err, files) => {
   console.log(`loading ${jsfiles.length} commands...`);
   jsfiles.forEach((f, i) => {
     let props = require(`./commands/${f}`);
-    console.log(`${f} loaded!`);
+    console.log(`The command ${f} has loaded.`);
     client.commands.set(props.help.name, props);
   });
 });
 
 client.on('ready', () => {
   client.user.setActivity("your commands", { type: 'WATCHING' })
-  console.log(`ready to instantly die`);
+  console.log(`Terminal booted up sucessfully.`);
 });
 
 client.on('message', message => {
@@ -35,7 +35,7 @@ client.on('message', message => {
   if (!command.startsWith(prefix)) return;
 
   let cmd = client.commands.get(command.slice(prefix.length));
-  if (cmd) cmd.run(client, message, args, ops);
+  if (cmd) cmd.run(client, message, args);
 });
 
 client.login(config.token);
