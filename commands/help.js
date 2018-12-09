@@ -58,13 +58,13 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which makes Terminal join a VC. Usage: >_join")
     } else {
     if (args.includes("play")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which makes Terminal play an URL. Usage: >_play (URL)")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Play:** A command which makes Terminal play an URL. Usage: >_play (URL)")
     } else {
     if (args.includes("skip")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which starts a vote for skipping the current video/song. Usage: >skip")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Skip:** A command which starts a vote for skipping the current video/song. Usage: >skip")
     } else {
     if (args.includes("leave")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which makes Terminal leave a VC. Usage: >_leave")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Leave:** A command which makes Terminal leave a VC. Usage: >_leave")
     } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
