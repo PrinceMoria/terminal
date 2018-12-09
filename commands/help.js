@@ -57,6 +57,15 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("join")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which makes Terminal join a VC. Usage: >_join")
     } else {
+    if (args.includes("play")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which makes Terminal play an URL. Usage: >_play (URL)")
+    } else {
+    if (args.includes("skip")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which starts a vote for skipping the current video/song. Usage: >skip")
+    } else {
+    if (args.includes("queue")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which makes Terminal show the current video queue. Usage: >_queue")
+    } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setAuthor('Terminal Panel')
@@ -65,10 +74,11 @@ module.exports.run = async (client, message, args) => {
         .addField("Punishment:", "`>_kick`, `>_ban`, `>_unban`, `>_softban`, `>_mute`, `>_unmute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
         .addField("Messages:", "`>_censor`, `>_purge`, `>_invites`")
-        .addField("Other:", "`>_developers`, `>_help`, `>_uptime`, `>_ping`");
+        .addField("Other:", "`>_developers`, `>_help`, `>_uptime`, `>_ping`")
+        .addField("Music:", "`>_play`, `>_join`, `>_skip`, `>_queue`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
