@@ -50,6 +50,18 @@ client.on('message', message => {
     message.delete()
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot say that word as administrators have blocked it!")
   }
+  const Invites = require ("./commands/invites.js")
+  let invites = JSON.parse(fs.readFileSync("./invites.json", "utf8"));
+  if (!invites[message.guild.id]) { 
+    invites[message.guild.id] = {
+      block: 0
+    };
+  }
+  if (invites[message.guild.id].block === 1) {
+    if (message.content.includes("discord.gg")) {
+    message.delete()
+    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot post discord server invites as administrators have blocked it!")
+  }}
   let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0].toLowerCase();
