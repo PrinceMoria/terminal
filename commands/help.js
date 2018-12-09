@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Autorole:** A command which toggles autorole for the server. Usage: >_autorole (role name)")
     } else {
      if (args.includes("invites")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "*Invites:** A command which blocks/allows invites to be advertised. Usage: >_invites (block)/>_invites")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Invites:** A command which blocks/allows invites to be advertised. Usage: >_invites (block)/>_invites")
     } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
