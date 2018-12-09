@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("**Addrole:** A command that adds a role to an user. Usage: >_addrole (user) (role name)")
     } else {
     if (args.includes("developers")) {
-        message.channel.send("**Developers:** Displays the bot owners/developers.")
+        message.channel.send("**Developers:** Displays the bot owners/developers")
     } else {
     if (args.includes("removerole")) {
         message.channel.send("**Removerole:** A command that removes a role from an user. Usage: >removerole (user) (rolename)")
@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Roles:", "`>_addrole`, `>_removerole`")
         .addfield("General", "`>_developers`");
      message.channel.send(serverembed);
-}}}}}}}
+}}}}}}
     
 };
 
