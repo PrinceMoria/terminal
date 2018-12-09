@@ -23,7 +23,7 @@ client.on("guildMemberAdd", member => {
     let autorole = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
     if (!autorole[member.guild.id]) { 
       autorole[member.guild.id] = {
-        autorole: config.autorole
+        autorole: "none"
       };
     }
     var role = autorole[member.guild.id].role;
@@ -43,8 +43,8 @@ client.on('message', message => {
   let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0].toLowerCase();
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  
+  let args = messageArray.slice(1);
+
   if (!command.startsWith(prefix)) return;
 
   let cmd = client.commands.get(command.slice(prefix.length));

@@ -2,7 +2,6 @@ const fs = require("fs");
 
 exports.run = async (bot, message, args) => {
 	if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "You do not have sufficient permissions to add an autorole.");
-	channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Please state a role.");
 	let autorole = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
 	if (!args[0]) { 
 		autorole[message.guild.id] = {
