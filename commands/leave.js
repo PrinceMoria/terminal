@@ -1,13 +1,15 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
-    if (!message.member.voiceChannel) return message.channel.send("You aren't in a VC! Please join a voice chat.");
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "You do not have sufficient permissions to make the bot leave the channel.");
 
-    if (!message.guild.me.voiceChannel) return message.channel.send("The bot isn't in a VC!");
+    if (!message.member.voiceChannel) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Please join a voice chat.");
+
+    if (!message.guild.me.voiceChannel) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "I am not in a voice chat.");
 
     if (message.guild.me.voiceChannelID !== message.member.voiceChannelID) return message.channel.send("The bot is in a different channel!");
 
-    message.guild.me.voiceChannel.leave();
+    message.member.voiceChannel.leave()
 
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Left the VC.");
 };
