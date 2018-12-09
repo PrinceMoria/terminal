@@ -39,7 +39,17 @@ client.on('ready', () => {
 client.on('message', message => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return message.author.send("**/" + message.author.username + "/DM** \n Sorry, but commands in my DMs have been disabled. Please try it in a server." )
-
+  const Censor = require ("./commands/censor.js")
+  let censor = JSON.parse(fs.readFileSync("./censor.json", "utf8"));
+  if (!censor[message.guild.id]) { 
+    censor[message.guild.id] = {
+      word: "none"
+    };
+  }
+  if (message.content.includes(censor[message.guild.id].word)) {
+    message.delete()
+    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot say that word as administrators have blocked it!")
+  }
   let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0].toLowerCase();
