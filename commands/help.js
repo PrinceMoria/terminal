@@ -45,18 +45,24 @@ module.exports.run = async (client, message, args) => {
      if (args.includes("invites")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Invites:** A command which blocks/allows invites to be advertised. Usage: >_invites (block)/>_invites")
     } else {
+     if (args.includes("unban")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Unban:** A command which unbans an user. Usage: >_unban (user)")
+        } else {
+     if (args.includes("unmute")) {
+                message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Unmute:** A command which unmutes an user. Usage: >_unmute (user)")
+            } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setAuthor('Terminal Panel')
         .setTitle("Commands:")
         .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
-        .addField("Punishment:", "`>_kick`, `>_ban`, `>_softban`, `>_mute`, `>_blind`")
+        .addField("Punishment:", "`>_kick`, `>_ban`, `>_unban`, `>_softban`, `>_mute`, `>_unmute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
         .addField("Messages:", "`>_censor`, `>_purge`, `>_invites`")
         .addField("Other:", "`>_developers`, `>_help`, `>_uptime`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
