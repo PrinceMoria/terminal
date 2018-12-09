@@ -21,4 +21,5 @@ We plan to expand and create more commands for terminal. You may help us by post
 >purge,
 >softban,
 >autorole,
->uptime
+>uptime,
+>invites
