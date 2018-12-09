@@ -56,7 +56,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Other:", "`>_developers`, `>_help`, `>_uptime`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}
+}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
