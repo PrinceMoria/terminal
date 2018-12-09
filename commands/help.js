@@ -20,7 +20,8 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("removerole")) {
         message.channel.send("**Removerole:** A command that removes a role from an user. Usage: >removerole (user) (rolename)")
     } else {
-        let serverembed = new Discord.RichEmbed()
+        let serverembed = new Discord.MessageEmbed()
+        .setAuthor('Terminal Prompt', message.author.displayAvatarURL())
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setTitle("Commands:")
         .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
