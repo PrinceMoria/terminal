@@ -18,6 +18,19 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
+client.on("guildMemberAdd", member => {
+    const autoRole = require ("./commands/autorole.js")
+    let autorole = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
+    if (!autorole[member.guild.id]) { 
+      autorole[member.guild.id] = {
+        autorole: config.autorole
+      };
+    }
+    var role = autorole[member.guild.id].role;
+    if (!role) return;
+    member.addRole(role);
+  });
+
 client.on('ready', () => {
   client.user.setActivity("your commands", { type: 'WATCHING' })
   console.log(`Terminal booted up sucessfully.`);
