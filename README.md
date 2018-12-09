@@ -15,3 +15,8 @@ We plan to expand and create more commands for terminal. You may help us by post
 >removerole, 
 >mute, 
 >blind, 
+>developers,
+>help,
+>purge,
+>softban,
+>autorole
