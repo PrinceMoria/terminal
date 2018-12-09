@@ -63,6 +63,9 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("leave")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Leave:** A command which makes Terminal leave a VC. Usage: >_leave")
     } else {
+    if (args.includes("lockdown")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Lockdown:** A command which locks down a channel, preventing anyone but admins to speak. Usage: >_lockdown lock/>_lockdown")
+    } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setAuthor('Terminal Panel')
@@ -70,12 +73,12 @@ module.exports.run = async (client, message, args) => {
         .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
         .addField("Punishment:", "`>_kick`, `>_ban`, `>_unban`, `>_softban`, `>_mute`, `>_unmute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
-        .addField("Messages:", "`>_censor`, `>_purge`, `>_invites`")
+        .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`")
         .addField("Other:", "`>_developers`, `>_help`, `>_uptime`, `>_ping`")
         .addField("Music:", "`>_play`, `>_join`, `>_leave`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
