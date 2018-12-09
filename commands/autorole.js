@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
 	if (!message.member.hasPermission("MANAGE_ROLES")) return message.channel.send("You do not have permissions to use this command.");
 	let autorole = JSON.parse(fs.readFileSync("./autorole.json", "utf8"));
 	if (!args[0]) { 
@@ -23,4 +23,6 @@ exports.run = async (bot, message, args) => {
 		});
 		message.channel.send(`The server autorole set to **${role.name}**`);
 	}
+	module.exports.help = {
+    name: "autorole"
 }
