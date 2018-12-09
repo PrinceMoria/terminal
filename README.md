@@ -26,4 +26,8 @@ We plan to expand and create more commands for terminal. You may help us by post
 >invites,
 >censor,
 >unban,
->unmute
+>unmute,
+>join,
+>leave,
+>skip,
+>play

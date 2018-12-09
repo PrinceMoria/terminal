@@ -63,8 +63,8 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("skip")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which starts a vote for skipping the current video/song. Usage: >skip")
     } else {
-    if (args.includes("queue")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which makes Terminal show the current video queue. Usage: >_queue")
+    if (args.includes("leave")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Join:** A command which makes Terminal leave a VC. Usage: >_leave")
     } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
@@ -75,7 +75,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
         .addField("Messages:", "`>_censor`, `>_purge`, `>_invites`")
         .addField("Other:", "`>_developers`, `>_help`, `>_uptime`, `>_ping`")
-        .addField("Music:", "`>_play`, `>_join`, `>_skip`, `>_queue`");
+        .addField("Music:", "`>_play`, `>_join`, `>_skip`, `>_leave`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
 }}}}}}}}}}}}}}}}}}}}}
