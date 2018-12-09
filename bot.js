@@ -56,6 +56,18 @@ client.on('message', message => {
     message.delete()
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot say that word as administrators have blocked it!")
   }
+  const Lockdown = require ("./commands/lockdown.js")
+  let lockdown = JSON.parse(fs.readFileSync("./lockdown.json", "utf8"));
+  if (!lockdown[message.guild.id]) { 
+    lockdown[message.guild.id] = {
+      lock: "none"
+    };
+  }
+  if (message.channel.id === (lockdown[message.guild.id].lock)) {
+    if (message.member.hasPermission("MANAGE_MESSAGES")) return
+    if (message.author.id === ["521023036812558356" || "365274392680333329" || "372078453236957185"]) return
+    message.delete()
+  }
   const Invites = require ("./commands/invites.js")
   let invites = JSON.parse(fs.readFileSync("./invites.json", "utf8"));
   if (!invites[message.guild.id]) { 

@@ -10,19 +10,18 @@ module.exports.run = async (bot, message, args) => {
 		fs.writeFile("./lockdown.json", JSON.stringify(lockdown), (err) => {
 			if (err) console.log(err);
 		});
-		message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Cleared all censorship of words.");
+	    return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Removed lockdown from this channel.");
 	}
-	if (args[0]) { 
-		let words = args.join(" ");
+	if (args[0] = "lock") { 
 		lockdown[message.guild.id] = {
 			lock: message.channel.id
 		};
 		fs.writeFile("./lockdown.json", JSON.stringify(lockdown), (err) => {
 			if (err) console.log(err)
 		});
-		message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + `Added censorship for that word.`);
+		message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + `Locked down this channel.`);
 	}
 }
 module.exports.help = {
-    name: "censor"
+    name: "lockdown"
 }
