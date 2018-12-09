@@ -30,8 +30,8 @@ client.on('message', message => {
   let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0].toLowerCase();
-  let args = messageArray.slice(1);
-
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  
   if (!command.startsWith(prefix)) return;
 
   let cmd = client.commands.get(command.slice(prefix.length));

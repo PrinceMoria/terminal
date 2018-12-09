@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
   let gRole = message.guild.roles.find(`name`, role);
   if(!gRole) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + " That role doesn't exist, if it does exist: check your spelling");
 
-  if(!rMember.roles.has(gRole.id)) return message.reply("**/" + message.guild + "/" + message.channel.name + "/** \n  " + ` That person hasn't got that role.`);
+  if(!rMember.roles.has(gRole.id)) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + ` That person hasn't got that role.`);
   await(rMember.removeRole(gRole.id));
 
   try{

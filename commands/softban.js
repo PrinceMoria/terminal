@@ -15,5 +15,5 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + " Successfully softbanned user: " + user + ", for the reason: " + reason)
 }
 module.exports.help = {
-    name: "ban"
+    name: "softban"
 }

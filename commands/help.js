@@ -9,6 +9,9 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("ban")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Ban:** A command that bans an user. Usage: >_ban (user) (reason)")
     } else {
+    if (args.includes("softban")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Softban:** A command that bans and unbans a user. This is used to kick a player but also delete their messages. Usage: >_softban (user) (reason)")
+    } else {
     if (args.includes("mute")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Mute:** A command that mutes an user from typing. Usage: >_mute (user) (time)")
     } else {
@@ -29,12 +32,12 @@ module.exports.run = async (client, message, args) => {
         .setAuthor('Terminal Panel')
         .setTitle("Commands:")
         .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
-        .addField("Punishment:", "`>_kick`, `>_ban`, `>_mute`, `>_blind`")
+        .addField("Punishment:", "`>_kick`, `>_ban`, `>_softban`, `>_mute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`")
         .addField("Other:", "`>_developers`, `>_help`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}
+}}}}}}}}
     
 };
 module.exports.help = {
