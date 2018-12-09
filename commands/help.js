@@ -9,6 +9,9 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("ban")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Ban:** A command that bans an user. Usage: >_ban (user) (reason)")
     } else {
+    if (args.includes("purge")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Purge:** A command that purges messages. Usage: >_purge (interger)")
+    } else {
     if (args.includes("softban")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Softban:** A command that bans and unbans a user. This is used to kick a player but also delete their messages. Usage: >_softban (user) (reason)")
     } else {
@@ -24,8 +27,23 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("removerole")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Removerole:** A command that removes a role from an user. Usage: >_removerole (user) (rolename)")
     } else {
+    if (args.includes("censor")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Censor:** A command that censors a certain word. Usage: >_censor (word)")
+    } else {
      if (args.includes("developers")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Developers:** A command that shows the developers and owners of Terminal. Usage: >_developers")
+    } else {
+     if (args.includes("help")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Help:** A command that lists commands. Usage: >_help")
+    } else {
+     if (args.includes("uptime")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Uptime:** A command that shows the bot uptime. Usage: >_uptime")
+    } else {
+     if (args.includes("autorole")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Autorole:** A command which toggles autorole for the server. Usage: >_autorole (role name)")
+    } else {
+     if (args.includes("autorole")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "*Invites:** A command which blocks/allows invites to be advertised. Usage: >_invites (block)/>_invites")
     } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
@@ -33,11 +51,12 @@ module.exports.run = async (client, message, args) => {
         .setTitle("Commands:")
         .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
         .addField("Punishment:", "`>_kick`, `>_ban`, `>_softban`, `>_mute`, `>_blind`")
-        .addField("Roles:", "`>_addrole`, `>_removerole`")
-        .addField("Other:", "`>_developers`, `>_help`");
+        .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
+        .addField("Messages:", "`>_censor`, `>_purge`, `>_invites`")
+        .addField("Other:", "`>_developers`, `>_help`, `>_uptime`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}
+}}}}}}}}}}}}
     
 };
 module.exports.help = {
