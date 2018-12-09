@@ -12,7 +12,7 @@ exports.run = async (client, message, args, ops) => {
     let connection = await message.member.voiceChannel.join();
     
     let dispatcher = await connection.playStream(ytdl(args[0], { filter: 'audioonly'}));
-    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + `Now playing: ${info.title});
+    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + `Now playing: ${info.title}`);
 }
 module.exports.help = {
     name: "play"
