@@ -21,8 +21,8 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("removerole")) {
         message.channel.send("**Removerole:** A command that removes a role from an user. Usage: >_removerole (user) (rolename)")
     } else {
-     if (args.includes("developer")) {
-        message.channel.send("**Developer:** A command that shows the developers and owners of Terminal. Usage: >_terminal")
+     if (args.includes("developers")) {
+        message.channel.send("**Developers:** A command that shows the developers and owners of Terminal. Usage: >_developers")
     } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
         .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
         .addField("Punishment:", "`>_kick`, `>_ban`, `>_mute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`")
-        .addField("Other:", "`>_developer`, `>_help`");
+        .addField("Other:", "`>_developers`, `>_help`");
      message.channel.send(serverembed);
 }}}}}}}
     
