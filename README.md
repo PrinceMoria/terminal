@@ -12,6 +12,7 @@ We plan to expand and create more commands for terminal. You may help us by post
 # Current commands
 >kick, 
 >ban, 
+>ping,
 >addrole, 
 >removerole, 
 >mute, 
@@ -22,4 +23,7 @@ We plan to expand and create more commands for terminal. You may help us by post
 >softban,
 >autorole,
 >uptime,
->invites
+>invites,
+>censor,
+>unban,
+>unmute
