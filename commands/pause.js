@@ -5,7 +5,7 @@ module.exports.run = async (client, message) => {
 
     message.guild.voiceConnection.player.dispatcher.pause();
 
-    message.channel.send("Paused.")
+    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Paused.")
 
 }
 module.exports.help = {
