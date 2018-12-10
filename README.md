@@ -30,4 +30,9 @@ We plan to expand and create more commands for terminal. You may help us by post
 >join,
 >leave,
 >skip,
->play
+>play,
+>timer,
+>lockdown,
+>poll,
+>announce,
+>prefix
