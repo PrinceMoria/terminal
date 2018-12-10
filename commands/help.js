@@ -73,7 +73,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Announce:** A command which announces a message in a specific channel. Usage: >_announce (channel) (message)")
     } else {
     if (args.includes("poll")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Lockdown:** A command which creates a poll. Usage: >_poll (question)")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Poll:** A command which creates a poll. Usage: >_poll (question)")
     } else {
     if (args.includes("timer")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Timer:** A command which creates a timer for seconds/minutes/days/months/years. Usage: >_timer (time)")
