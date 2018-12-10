@@ -80,10 +80,10 @@ module.exports.run = async (client, message, args) => {
     } else {
     if (args.includes("pause")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Pause:** A command that pauses the current song playing. Usage: >_pause")
-    }
+    } else {
     if (args.includes("resume")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Resume:** A command that resumes a song. Usage: >_resume")
-    }
+    } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setAuthor('Terminal Panel')
@@ -96,7 +96,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
