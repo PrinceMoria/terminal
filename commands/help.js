@@ -66,6 +66,15 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("lockdown")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Lockdown:** A command which locks down a channel, preventing anyone but admins to speak. Usage: >_lockdown lock/>_lockdown")
     } else {
+    if (args.includes("prefix")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Prefix:** A command which changes the bot's prefix. Example: *'Hey Bot_'* would make *'Hey Bot_help'*. Usage: >_prefix (prefix)")
+    } else {
+    if (args.includes("announce")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Lockdown:** A command which  Usage: >_announce (channel) (message)")
+    } else {
+    if (args.includes("poll")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Lockdown:** A command which creates a poll. Usage: >_poll (question)")
+    } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setAuthor('Terminal Panel')
@@ -73,12 +82,12 @@ module.exports.run = async (client, message, args) => {
         .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
         .addField("Punishment:", "`>_kick`, `>_ban`, `>_unban`, `>_softban`, `>_mute`, `>_unmute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
-        .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`")
+        .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_poll`")
         .addField("Other:", "`>_developers`, `>_help`, `>_uptime`, `>_ping`")
-        .addField("Music:", "`>_play`, `>_join`, `>_leave`");
+        .addField("Music:", "`>_play`, `>_join`, `>_prefix`, `>_leave`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
