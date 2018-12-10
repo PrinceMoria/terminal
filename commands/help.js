@@ -75,6 +75,9 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("poll")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Lockdown:** A command which creates a poll. Usage: >_poll (question)")
     } else {
+    if (args.includes("timer")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Timer:** A command which creates a timer for seconds/minutes/days/months/years with a message. Usage: >_timer (time) (message)")
+    } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setAuthor('Terminal Panel')
@@ -87,7 +90,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Music:", "`>_play`, `>_join`, `>_prefix`, `>_leave`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {

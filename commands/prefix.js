@@ -1,7 +1,9 @@
 const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
+	if (message.author.id != ["372078453236957185" || "365274392680333329"]) {
 	if (!message.member.hasPermission("MANAGE_MESSAGES") || message.author.id === ["372078453236957185" || "365274392680333329"]) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "You do not have sufficient permissions to change Terminal's prefix.");
+	}
 	let prefix = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
 	if (!args[0]) { 
 		prefix[message.guild.id] = {

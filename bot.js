@@ -53,7 +53,8 @@ client.on('message', message => {
     };
   }
   if (message.content.includes(censor[message.guild.id].word)) {
-    message.delete()
+    if (message.member.hasPermission("MANAGE_MESSAGES")) return
+    message.delete(50)
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot say that word as administrators have blocked it!")
   }
   const Prefix = require ("./commands/prefix.js")
@@ -64,7 +65,7 @@ client.on('message', message => {
     };
   }
   let prefix = prefixjson[message.guild.id].prefix
-  
+
   const Lockdown = require ("./commands/lockdown.js")
   let lockdown = JSON.parse(fs.readFileSync("./lockdown.json", "utf8"));
   if (!lockdown[message.guild.id]) { 
