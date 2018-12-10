@@ -56,6 +56,15 @@ client.on('message', message => {
     message.delete()
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot say that word as administrators have blocked it!")
   }
+  const Prefix = require ("./commands/prefix.js")
+  let prefixjson = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
+  if (!prefixjson[message.guild.id]) { 
+    prefixjson[message.guild.id] = {
+      prefix: ">_"
+    };
+  }
+  let prefix = prefixjson[message.guild.id].prefix
+  
   const Lockdown = require ("./commands/lockdown.js")
   let lockdown = JSON.parse(fs.readFileSync("./lockdown.json", "utf8"));
   if (!lockdown[message.guild.id]) { 
@@ -80,7 +89,6 @@ client.on('message', message => {
     message.delete()
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot post discord server invites as administrators have blocked it!")
   }}
-  let prefix = config.prefix;
   let messageArray = message.content.split(" ");
   let command = messageArray[0].toLowerCase();
   let args = messageArray.slice(1);
