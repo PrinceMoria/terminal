@@ -76,7 +76,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Lockdown:** A command which creates a poll. Usage: >_poll (question)")
     } else {
     if (args.includes("timer")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Timer:** A command which creates a timer for seconds/minutes/days/months/years with a message. Usage: >_timer (time) (message)")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Timer:** A command which creates a timer for seconds/minutes/days/months/years. Usage: >_timer (time)")
     } else {
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
