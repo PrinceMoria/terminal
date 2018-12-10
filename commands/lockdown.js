@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 		fs.writeFile("./lockdown.json", JSON.stringify(lockdown), (err) => {
 			if (err) console.log(err);
 		});
-	    return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Removed lockdown from this channel.");
+	    return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Removed lockdown from all channels.");
 	}
 	if (args[0] = "lock") { 
 		lockdown[message.guild.id] = {

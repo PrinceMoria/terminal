@@ -64,7 +64,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Leave:** A command which makes Terminal leave a VC. Usage: >_leave")
     } else {
     if (args.includes("lockdown")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Lockdown:** A command which locks down a channel, preventing anyone but admins to speak. Usage: >_lockdown lock/>_lockdown")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Lockdown:** A command which locks down a channel, preventing anyone but admins to speak. You have to unlock via another channel to properly unlock the channel. Usage: >_lockdown lock/>_lockdown")
     } else {
     if (args.includes("prefix")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Prefix:** A command which changes the bot's prefix. Example: *'Hey Bot_'* would make *'Hey Bot_help'*. Usage: >_prefix (prefix)")
