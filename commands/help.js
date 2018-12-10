@@ -78,6 +78,12 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("timer")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Timer:** A command which creates a timer for seconds/minutes/days/months/years. Usage: >_timer (time)")
     } else {
+    if (args.includes("pause")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Pause:** A command that pauses the current song playing. Usage: >_pause")
+    }
+    if (args.includes("resume")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Resume:** A command that resumes a song. Usage: >_resume")
+    }
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setAuthor('Terminal Panel')
@@ -87,7 +93,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
         .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_poll`")
         .addField("Other:", "`>_developers`, `>_help`, `>_uptime`, `>_ping`, `>_prefix`")
-        .addField("Music:", "`>_play`, `>_join`, `>_leave`");
+        .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
 }}}}}}}}}}}}}}}}}}}}}}}}}
