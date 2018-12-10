@@ -1,4 +1,4 @@
-exports.run = async (client, message) => {
+module.exports.run = async (client, message) => {
 
     if (!message.member.voiceChannel) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " +  "You're not in a VC, please join one.")
     if(!message.member.voiceChannel.joinable) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "I don't have permissions to join this vc");
@@ -11,4 +11,7 @@ exports.run = async (client, message) => {
 
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + `Volume set to **${parseInt(args[1])}/200**.`);
 
+}
+module.exports.help = {
+    name: "volume",
 }
