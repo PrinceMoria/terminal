@@ -96,7 +96,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
         .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_poll`")
         .addField("Other:", "`>_developers`, `>_help`, `>_uptime`, `>_ping`, `>_prefix`")
-        .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`");
+        .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`, `>_volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}
