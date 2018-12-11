@@ -35,4 +35,7 @@ We plan to expand and create more commands for terminal. You may help us by post
 >lockdown,
 >poll,
 >announce,
->prefix
+>prefix,
+>pause,
+>resume,
+>volume
