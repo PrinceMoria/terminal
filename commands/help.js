@@ -87,6 +87,10 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("volume")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Volume:** A command that changes volume of a video. Usage: >_volume (0/200)")
     } else {
+    if (args.includes("serverinfo")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Server Info:** A command that shows all the information about the current guild. Usage: >_serverinfo")
+    } else {
+        
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setAuthor('Terminal Panel')
@@ -95,11 +99,12 @@ module.exports.run = async (client, message, args) => {
         .addField("Punishment:", "`>_kick`, `>_ban`, `>_unban`, `>_softban`, `>_mute`, `>_unmute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
         .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_poll`")
+        .addField("Info:", "`>_serverinfo`")
         .addField("Other:", "`>_developers`, `>_help`, `>_uptime`, `>_ping`, `>_prefix`")
         .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
