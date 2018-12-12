@@ -5,7 +5,7 @@ module.exports.run = async (client, bot, message, args) => {
 let user = message.mentions.users.first()
 const userInfo = new Discord.RichEmbed()
             .setAuthor('Info For ' + user.username)
-            .setColor('#2D7FFF')
+            .setColor(Math.floor(Math.random() * 16777214) + 1)
             .setThumbnail(user.avatarURL)
             .addField('Discriminator', user.discriminator)
             .addField('Status', user.presence.status, true)
