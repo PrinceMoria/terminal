@@ -99,8 +99,8 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("hackban")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Hackban:** A command that bans a user ID. Usage: >_hackban (user id) (reason)")
     } else {
-    if (args.includes("terminaldeletethat")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Instant Delete:** By saying 'hey terminal delete that' it deletes the previous message. Usage: terminal delete that")
+    if (args.includes("delete")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Instant Delete:** A command that deletes the previous message. Usage: >_delete")
     } else {
         
         let serverembed = new Discord.RichEmbed()
@@ -110,7 +110,7 @@ module.exports.run = async (client, message, args) => {
         .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
         .addField("Punishment:", "`>_kick`, `>_ban`, `>_unban`, `>_softban`, `>_hackban`, `>_mute`, `>_unmute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
-        .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_ticket`, `>_poll`, `terminal delete that`")
+        .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_ticket`, `>_poll`, `>_delete`")
         .addField("Info:", "`>_serverinfo`")
         .addField("Other:", "`>_developers`, `>_image`, `>_help`, `>_uptime`, `>_ping`, `>_prefix`")
         .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`, `>_volume`");
