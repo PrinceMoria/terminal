@@ -40,6 +40,5 @@ We plan to expand and create more commands for terminal. You may help us by post
 >resume,
 >volume,
 >ticket,
->botinfo,
 >image,
 >terminal delete that
