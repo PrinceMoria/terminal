@@ -12,7 +12,7 @@ const userInfo = new Discord.RichEmbed()
             .addField('Join Date', message.member.joinedAt)
             .addField('Created Account', user.createdAt)
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
-        message.channel.send({ embed: userInfo })
+        message.channel.send(userInfo)
     }
     module.exports.help = {
         name: "userinfo"
