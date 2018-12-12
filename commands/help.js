@@ -119,7 +119,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`, `>_volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
