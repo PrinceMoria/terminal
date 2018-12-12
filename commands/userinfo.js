@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => { 
+module.exports.run = async (client, bot, message, args) => { 
 
 let user = message.mentions.users.first()
 const userInfo = new Discord.RichEmbed()
