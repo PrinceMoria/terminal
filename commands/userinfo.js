@@ -1,14 +1,17 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (client, bot, message, args) => { 
+module.exports.run = async (client, message, args) => { 
 
-let user = message.mentions.users.first()
-if (args.length < 1) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**" + "Please supply a mention.")
+    let user = message.mentions.users.first();
+
+    if (user === undefined) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Please supply a mention.");
 const userInfo = new Discord.RichEmbed()
-            .setAuthor('Info For ' + user.username)
+            .setAuthor('Info For ' + user.tag)
             .setColor(Math.floor(Math.random() * 16777214) + 1)
             .setThumbnail(user.avatarURL)
+            .addField('Username', user.username)
             .addField('Discriminator', user.discriminator)
+            .addField('User ID', user.id)
             .addField('Status', user.presence.status, true)
             .addField('Join Date', message.member.joinedAt)
             .addField('Created Account', user.createdAt)
