@@ -99,6 +99,9 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("botinfo")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Bot Info:** A command that displays all the bot information. Usage: >_botinfo")
     } else {
+    if (args.includes("terminaldeletethat")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Instant Delete:** By saying 'hey terminal delete that' it deletes the previous message. Usage: terminal delete that")
+    } else {
         
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
@@ -107,13 +110,13 @@ module.exports.run = async (client, message, args) => {
         .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
         .addField("Punishment:", "`>_kick`, `>_ban`, `>_unban`, `>_softban`, `>_mute`, `>_unmute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
-        .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_ticket`, `>_poll`")
+        .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_ticket`, `>_poll`, `terminal delete that`")
         .addField("Info:", "`>_serverinfo`, `>_botinfo`")
         .addField("Other:", "`>_developers`, `>_image`, `>_help`, `>_uptime`, `>_ping`, `>_prefix`")
         .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`, `>_volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {

@@ -41,4 +41,5 @@ We plan to expand and create more commands for terminal. You may help us by post
 >volume,
 >ticket,
 >botinfo,
->image
+>image,
+>terminal delete that

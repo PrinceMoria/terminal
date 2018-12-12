@@ -66,6 +66,10 @@ client.on('message', message => {
   }
   let prefix = prefixjson[message.guild.id].prefix
 
+  if (message.content.includes("terminal delete that")) {
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return 
+    message.channel.bulkDelete(2);
+  }
   const Lockdown = require ("./commands/lockdown.js")
   let lockdown = JSON.parse(fs.readFileSync("./lockdown.json", "utf8"));
   if (!lockdown[message.guild.id]) { 
