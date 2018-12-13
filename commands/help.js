@@ -1,8 +1,17 @@
 const Discord = require("discord.js");
+const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
     if (message.author.bot) return;
 
+    let prefixjson = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
+    if (!prefixjson[message.guild.id]) { 
+      prefixjson[message.guild.id] = {
+        prefix: ">_"
+      };
+    }
+    let prefix = prefixjson[message.guild.id].prefix
+  
     if (args.includes("kick")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Kick:** A command that kicks an user. Usage: >_kick (user)")
     } else {
@@ -108,15 +117,15 @@ module.exports.run = async (client, message, args) => {
         
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
-        .setAuthor('Terminal Panel')
+        .setAuthor('Terminal Panel - Prefix: ' + prefix)
         .setTitle("Commands:")
-        .setDescription("Terminal: A moderation bot. Do >_help (command) to get more info.")
-        .addField("Punishment:", "`>_kick`, `>_ban`, `>_unban`, `>_softban`, `>_hackban`, `>_mute`, `>_unmute`, `>_blind`")
-        .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
-        .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_ticket`, `>_poll`, `>_delete`")
-        .addField("Info:", "`>_serverinfo`, `>_userinfo`")
-        .addField("Other:", "`>_developers`, `>_image`, `>_help`, `>_uptime`, `>_ping`, `>_prefix`")
-        .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`, `>_volume`");
+        .setDescription("Terminal: A moderation bot. Do " + prefix + "help (command) to get more info.")
+        .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`")
+        .addField("Roles:", "`addrole`, `removerole`, `autorole`")
+        .addField("Messages:", "`censor`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`")
+        .addField("Info:", "`serverinfo`, `userinfo`")
+        .addField("Other:", "`developers`, `image`, `help`, `uptime`, `ping`, `prefix`")
+        .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
