@@ -103,8 +103,11 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Delete:** A command that deletes the previous message. Usage: >_delete")
     } else {
     if (args.includes("userinfo")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "** User Info:** A command that displays all information about a user. Usage: >_userinfo (user)")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**User Info:** A command that displays all information about a user. Usage: >_userinfo (user)")
     } else {
+     if (args.includes("github")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Github:** A command that directs you to our github page. Usage: >_github")
+        } else {
         
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
@@ -115,11 +118,11 @@ module.exports.run = async (client, message, args) => {
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
         .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_ticket`, `>_poll`, `>_delete`")
         .addField("Info:", "`>_serverinfo`, `>_userinfo`")
-        .addField("Other:", "`>_developers`, `>_image`, `>_help`, `>_uptime`, `>_ping`, `>_prefix`")
+        .addField("Other:", "`>_developers`, `>_image`, `>_help`, `>_uptime`, `>_ping`, `>_prefix`, `>_github`")
         .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`, `>_volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
