@@ -111,9 +111,6 @@ module.exports.run = async (client, message, args) => {
     if (args.includes("delete")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Delete:** A command that deletes the previous message. Usage: >_delete")
     } else {
-    if (args.includes("userinfo")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**User Info:** A command that displays all information about a user. Usage: >_userinfo (user)")
-    } else {
      if (args.includes("github")) {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Github:** A command that directs you to our github page. Usage: >_github")
     } else {
@@ -129,7 +126,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`")
         .addField("Roles:", "`addrole`, `removerole`, `autorole`")
         .addField("Messages:", "`censor`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`")
-        .addField("Info:", "`serverinfo`, `userinfo`")
+        .addField("Info:", "`serverinfo`")
         .addField("Other:", "`developers`, `time`, `image`, `help`, `uptime`, `ping`, `prefix`, `github`")
         .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
