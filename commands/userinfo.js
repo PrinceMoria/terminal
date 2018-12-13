@@ -16,6 +16,6 @@ const userInfo = new Discord.RichEmbed()
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
         message.channel.send(userInfo)
     }
-    module.exports.help = {
-        name: "userinfo"
-    };
+module.exports.help = {
+    name: "userinfo"
+};

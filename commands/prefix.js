@@ -24,8 +24,8 @@ module.exports.run = async (bot, message, args) => {
 		});
 		message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Changed the server prefix to: `" + args + "`.");
 	}
-}
+}}
 module.exports.help = {
     name: "prefix"
 }
-	}
+	
