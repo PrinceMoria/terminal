@@ -112,8 +112,11 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Delete:** A command that deletes the previous message. Usage: >_delete")
     } else {
     if (args.includes("userinfo")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "** User Info:** A command that displays all information about a user. Usage: >_userinfo (user)")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**User Info:** A command that displays all information about a user. Usage: >_userinfo (user)")
     } else {
+     if (args.includes("github")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Github:** A command that directs you to our github page. Usage: >_github")
+        } else {
         
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
@@ -128,7 +131,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {

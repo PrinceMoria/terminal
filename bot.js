@@ -81,7 +81,8 @@ client.on('message', message => {
     };
   }
   if (message.channel.id === (lockdown[message.guild.id].lock)) {
-    if (message.author.id === ["521023036812558356" || "365274392680333329" || "372078453236957185"]) return
+    if (message.author.id != "372078453236957185") {
+      if (message.author.id != "365274392680333329") {
     if (message.member.hasPermission("MANAGE_MESSAGES")) return
     message.delete()
   }
@@ -105,6 +106,6 @@ client.on('message', message => {
 
   let cmd = client.commands.get(command.slice(prefix.length));
   if (cmd) cmd.run(client, message, args);
-});
+}}}});
 
 client.login(config.token);
