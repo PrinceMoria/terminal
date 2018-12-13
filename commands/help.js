@@ -116,7 +116,7 @@ module.exports.run = async (client, message, args) => {
     } else {
      if (args.includes("github")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Github:** A command that directs you to our github page. Usage: >_github")
-        } else {
+    } else {
         
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
@@ -127,7 +127,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Roles:", "`addrole`, `removerole`, `autorole`")
         .addField("Messages:", "`censor`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`")
         .addField("Info:", "`serverinfo`, `userinfo`")
-        .addField("Other:", "`developers`, `image`, `help`, `uptime`, `ping`, `prefix`")
+        .addField("Other:", "`developers`, `image`, `help`, `uptime`, `ping`, `prefix`, `github`")
         .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
