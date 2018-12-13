@@ -8,6 +8,7 @@ module.exports.run = async (client, message, args) => {
 const userInfo = new Discord.RichEmbed()
             .setAuthor('Info For ' + user.username, true)
             .setColor(Math.floor(Math.random() * 16777214) + 1)
+            .setThumbnail(user.displayAvatarURL)
             .addField('Discriminator', user.discriminator, true)
             .addField('Status', user.presence.status, true)
             .addField('Join Date', message.member.joinedAt, true)
