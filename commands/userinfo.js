@@ -1,18 +1,18 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => { 
+module.exports.run = async (client, message, args) => {
 
-    let user = message.mentions.users.first();
+    let use = message.mentions.users.first() || message.author
 
-    if (user === undefined) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Please supply a mention.");
+    if (use === undefined) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Please supply a mention.");
 const userInfo = new Discord.RichEmbed()
-            .setAuthor('Info For ' + user.username, true)
+            .setAuthor('Info For ' + use.username, true)
             .setColor(Math.floor(Math.random() * 16777214) + 1)
-            .setThumbnail(user.displayAvatarURL)
-            .addField('Discriminator', user.discriminator, true)
-            .addField('Status', user.presence.status, true)
+            .setThumbnail(use.user.displayAvatarURL)
+            .addField('Discriminator', use.discriminator, true)
+            .addField('Status', use.presence.status, true)
             .addField('Join Date', message.member.joinedAt, true)
-            .addField('Created Account', user.createdAt, true)
+            .addField('Created Account', use.createdAt, true)
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
         message.channel.send(userInfo)
     }

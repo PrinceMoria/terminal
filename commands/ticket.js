@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter("Report for user: " + message.mentions.users.first().username)
     .setColor('RANDOM')
     message.delete()
+    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
     message.channel.send(report)
 }
 module.exports.help = {
