@@ -67,10 +67,9 @@ client.on('message', message => {
   let prefix = prefixjson[message.guild.id].prefix
 
   if (message.content.includes(prefix + "delete")) {
-    if (message.author.id != "372078453236957185") {
-      if (message.author.id != "365274392680333329") {
+    if (message.author.id != "372078453236957185" || "365274392680333329") {
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return 
-    }}
+    }
     message.channel.bulkDelete(2);
   }
   const Lockdown = require ("./commands/lockdown.js")
@@ -81,8 +80,7 @@ client.on('message', message => {
     };
   }
   if (message.channel.id === (lockdown[message.guild.id].lock)) {
-    if (message.author.id != "372078453236957185") {
-      if (message.author.id != "365274392680333329") {
+    if (message.author.id === ["521023036812558356" || "365274392680333329" || "372078453236957185"]) return
     if (message.member.hasPermission("MANAGE_MESSAGES")) return
     message.delete()
   }
@@ -106,6 +104,6 @@ client.on('message', message => {
 
   let cmd = client.commands.get(command.slice(prefix.length));
   if (cmd) cmd.run(client, message, args);
-}}});
+});
 
 client.login(config.token);
