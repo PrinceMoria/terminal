@@ -100,7 +100,10 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Hackban:** A command that bans a user ID. Usage: >_hackban (user id) (reason)")
     } else {
     if (args.includes("delete")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Instant Delete:** A command that deletes the previous message. Usage: >_delete")
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Delete:** A command that deletes the previous message. Usage: >_delete")
+    } else {
+    if (args.includes("userinfo")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "** User Info:** A command that displays all information about a user. Usage: >_userinfo (user)")
     } else {
         
         let serverembed = new Discord.RichEmbed()
@@ -111,12 +114,12 @@ module.exports.run = async (client, message, args) => {
         .addField("Punishment:", "`>_kick`, `>_ban`, `>_unban`, `>_softban`, `>_hackban`, `>_mute`, `>_unmute`, `>_blind`")
         .addField("Roles:", "`>_addrole`, `>_removerole`, `>_autorole`")
         .addField("Messages:", "`>_censor`, `>_lockdown`, `>_purge`, `>_invites`, `>_announce`, `>_ticket`, `>_poll`, `>_delete`")
-        .addField("Info:", "`>_serverinfo`")
+        .addField("Info:", "`>_serverinfo`, `>_userinfo`")
         .addField("Other:", "`>_developers`, `>_image`, `>_help`, `>_uptime`, `>_ping`, `>_prefix`")
         .addField("Music:", "`>_play`, `>_join`, `>_leave`, `>_pause`, `>_resume`, `>_volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
