@@ -120,12 +120,22 @@ module.exports.run = async (client, message, args) => {
      if (args.includes("invite")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Invite:** [Not >_invites] A command that sends you an invitation link for the bot in your DMs. Usage: >_invite")
     } else {
+     if (args.includes("reload")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Reload:** [Bot admin command] A command that reloads any command. Usage: >_reload (command)")
+    } else {
+     if (args.includes("blacklist")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Black List:** [Bot admin command] A command that blacklists a user from using any commands. Usage: >_blacklist (id) allow/deny")
+    } else {
+     if (args.includes("gleave")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Guild Leave:** [Bot admin command] A command that leaves a guild. Usage: >_gleave (id)")
+    } else {
         
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
         .setAuthor('Terminal Panel - Prefix: ' + prefix)
         .setTitle("Commands:")
         .setDescription("Terminal: A moderation bot. Do " + prefix + "help (command) to get more info.")
+        .addField("Bot Admins:", "`reload`, `blacklist`, `gleave`")
         .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`")
         .addField("Roles:", "`addrole`, `removerole`, `autorole`")
         .addField("Messages:", "`censor`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`")
@@ -134,7 +144,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
