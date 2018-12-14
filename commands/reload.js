@@ -11,4 +11,6 @@ module.exports.run = (moist, message, args, ops) => {
     }
     message.channel.send("/" + message.guild + "/" + message.channel.name + "/ \n  " + `Reloaded ${args[0]} go do your thing`);
 }
-    
+module.exports.help = {
+    name: "reload"
+}
