@@ -106,7 +106,19 @@ client.on('message', message => {
   if (!command.startsWith(prefix)) return;
 
   let cmd = client.commands.get(command.slice(prefix.length));
-  if (cmd) cmd.run(client, message, args);
-});
+  if (cmd) {
+    const Blacklist = require ("./commands/blacklist.js")
+    let blacklist = JSON.parse(fs.readFileSync("./blacklist.json", "utf8"));
+    if (!blacklist[message.author.id]) { 
+      blacklist[message.author.id] = {
+        person: 0
+      };
+    }
+    if (blacklist[message.author.id].person === 1) {
+      return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you have been blocked from using Terminal. Please contact square#1255 or speed#5496 for more information.")
+    }
+  cmd.run(client, message, args);
+  console.log(`${message.author.username} (${message.author.id}) ran a command in the guild: ` + message.guild.id)
+}});
 
 client.login(config.token);
