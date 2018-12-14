@@ -7,9 +7,9 @@ module.exports.run = (moist, message, args, ops) => {
         delete require.cache[require.resolve(`./${args[0]}.js`)];
     } catch (e) {
         console.log(e.stack)
-        return message.channel.send("/" + message.guild + "/" + message.channel.name + "/ \n  " + `Something went wrong go reload ${args[0]} yourself`);
+        return message.channel.send("/" + message.guild + "/" + message.channel.name + "/ \n  " + `Please manually reload ${args[0]}.`);
     }
-    message.channel.send("/" + message.guild + "/" + message.channel.name + "/ \n  " + `Reloaded ${args[0]} go do your thing`);
+    message.channel.send("/" + message.guild + "/" + message.channel.name + "/ \n  " + `Reloaded ${args[0]}.`);
 }
 module.exports.help = {
     name: "reload"
