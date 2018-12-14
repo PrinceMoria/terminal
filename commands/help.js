@@ -120,8 +120,8 @@ module.exports.run = async (client, message, args) => {
      if (args.includes("invite")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Invite:** [Not >_invites] A command that sends you an invitation link for the bot in your DMs. Usage: >_invite")
     } else {
-     if (args.includes("reload")) {
-        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Reload:** [Bot admin command] A command that reloads any command. Usage: >_reload (command)")
+     if (args.includes("shutdown")) {
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Shutdown:** [Bot admin command] A command that shuts the bot down. Usage: >_shutdown")
     } else {
      if (args.includes("blacklist")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Black List:** [Bot admin command] A command that blacklists a user from using any commands. Usage: >_blacklist (id) allow/deny")
@@ -135,7 +135,7 @@ module.exports.run = async (client, message, args) => {
         .setAuthor('Terminal Panel - Prefix: ' + prefix)
         .setTitle("Commands:")
         .setDescription("Terminal: A moderation bot. Do " + prefix + "help (command) to get more info.")
-        .addField("Bot Admins:", "`reload`, `blacklist`, `gleave`")
+        .addField("Bot Admins:", "`shutdown`, `blacklist`, `gleave`")
         .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`")
         .addField("Roles:", "`addrole`, `removerole`, `autorole`")
         .addField("Messages:", "`censor`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`")
