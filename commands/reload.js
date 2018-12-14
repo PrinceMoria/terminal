@@ -1,7 +1,7 @@
 module.exports.run = (moist, message, args, ops) => {
     if (args.length  < 1) return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Please supply a command to reload.");
 	if (message.author.id !== "372078453236957185")
-    if (message.author.id !== "365274392680333329") return message.channel.send"**/" + message.guild + "/" + message.channel.name + "/** \n  " + "You are not a Terminal developer.")
+    if (message.author.id !== "365274392680333329") return message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "You are not a Terminal developer.")
 
     try {
         delete require.cache[require.resolve(`./${args[0]}.js`)];
