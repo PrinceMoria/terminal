@@ -144,6 +144,9 @@ module.exports.run = async (client, message, args) => {
      if (args.includes("pin")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Pin:** A command that pins a message by it's ID. Usage: >_pin (id)")
     } else {
+     if (args.includes("pin")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Unpin:** A command that unpins a message by it's ID. Usage: >_unpin (id)")
+    } else {
         
         
         let serverembed = new Discord.RichEmbed()
@@ -154,7 +157,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Bot Admins:", "`shutdown`, `blacklist`, `gleave`")
         .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`, `unblind`")
         .addField("Roles:", "`addrole`, `removerole`, `autorole`")
-        .addField("Messages:", "`censor`, `pg`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`, `pin`")
+        .addField("Messages:", "`censor`, `pg`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`, `pin`, `unpin`")
         .addField("Info:", "`serverinfo`, `botinfo`, `channelinfo`, `userinfo`")
         .addField("Other:", "`developers`, `image`, `help`, `uptime`, `ping`, `prefix`, `github`, `invite`")
         .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
