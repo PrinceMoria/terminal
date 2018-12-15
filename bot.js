@@ -84,6 +84,7 @@ client.on('message', message => {
   if (message.channel.id === (lockdown[message.guild.id].lock)) {
     if (message.author.id === "372078453236957185") return
     if (message.author.id === "365274392680333329") return
+    if (message.author.id === "521023036812558356") return
     if (message.member.hasPermission("MANAGE_MESSAGES")) return
     message.delete()
   }
