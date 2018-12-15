@@ -129,6 +129,9 @@ module.exports.run = async (client, message, args) => {
      if (args.includes("gleave")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Guild Leave:** [Bot admin command] A command that leaves a guild. Usage: >_gleave (id)")
     } else {
+        if (args.includes("channelinfo")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Channel Info:** A command that displays all the channel information. Usage: >_channelinfo")
+    } else {
         
         let serverembed = new Discord.RichEmbed()
         .setColor(Math.floor(Math.random() * 16777214) + 1)
@@ -139,12 +142,12 @@ module.exports.run = async (client, message, args) => {
         .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`")
         .addField("Roles:", "`addrole`, `removerole`, `autorole`")
         .addField("Messages:", "`censor`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`")
-        .addField("Info:", "`serverinfo`, `botinfo`")
+        .addField("Info:", "`serverinfo`, `botinfo`, `channelinfo`")
         .addField("Other:", "`developers`, `image`, `help`, `uptime`, `ping`, `prefix`, `github`, `invite`")
         .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
