@@ -129,8 +129,11 @@ module.exports.run = async (client, message, args) => {
      if (args.includes("gleave")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Guild Leave:** [Bot admin command] A command that leaves a guild. Usage: >_gleave (id)")
     } else {
-        if (args.includes("channelinfo")) {
+     if (args.includes("channelinfo")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Channel Info:** A command that displays all the channel information. Usage: >_channelinfo")
+    } else {
+     if (args.includes("userinfo")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**User Info:** A command that displays all the information on one user. Usage: >_userinfo (mention)")
     } else {
         
         let serverembed = new Discord.RichEmbed()
@@ -142,12 +145,12 @@ module.exports.run = async (client, message, args) => {
         .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`")
         .addField("Roles:", "`addrole`, `removerole`, `autorole`")
         .addField("Messages:", "`censor`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`")
-        .addField("Info:", "`serverinfo`, `botinfo`, `channelinfo`")
+        .addField("Info:", "`serverinfo`, `botinfo`, `channelinfo`, `userinfo`")
         .addField("Other:", "`developers`, `image`, `help`, `uptime`, `ping`, `prefix`, `github`, `invite`")
         .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
