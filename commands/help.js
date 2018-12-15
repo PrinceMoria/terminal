@@ -144,7 +144,7 @@ module.exports.run = async (client, message, args) => {
      if (args.includes("pin")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Pin:** A command that pins a message by it's ID. Usage: >_pin (id)")
     } else {
-     if (args.includes("pin")) {
+     if (args.includes("unpin")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Unpin:** A command that unpins a message by it's ID. Usage: >_unpin (id)")
     } else {
         
