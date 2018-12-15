@@ -138,9 +138,11 @@ module.exports.run = async (client, message, args) => {
      if (args.includes("pg")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**PG Mode:** A command that turns on PG mode. This blocks all swears in the server. Usage: >_pg (on/off)")
     } else {
-    if (args.includes("unblind")) {
+     if (args.includes("unblind")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Unblind:** A command that unblinds a person. Usage: >_pg (on/off)")
     } else {
+     if (args.includes("pin")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Pin:** A command that pins a message by it's ID. Usage: >_pin (id)")
 
         
         
@@ -152,13 +154,13 @@ module.exports.run = async (client, message, args) => {
         .addField("Bot Admins:", "`shutdown`, `blacklist`, `gleave`")
         .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`, `unblind`")
         .addField("Roles:", "`addrole`, `removerole`, `autorole`")
-        .addField("Messages:", "`censor`, `pg`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`")
+        .addField("Messages:", "`censor`, `pg`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`, `pin`")
         .addField("Info:", "`serverinfo`, `botinfo`, `channelinfo`, `userinfo`")
         .addField("Other:", "`developers`, `image`, `help`, `uptime`, `ping`, `prefix`, `github`, `invite`")
         .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {
