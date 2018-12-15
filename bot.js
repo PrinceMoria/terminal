@@ -52,10 +52,85 @@ client.on('message', message => {
       word: "none"
     };
   }
-  if (message.content.includes(censor[message.guild.id].word)) {
-    if (message.member.hasPermission("MANAGE_MESSAGES")) return
-    message.delete(50)
-    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot say that word as administrators have blocked it!")
+  const PG = require ("./commands/censor.js")
+  let pg = JSON.parse(fs.readFileSync("./pg.json", "utf8"));
+  if (!pg[message.guild.id]) { 
+    pg[message.guild.id] = {
+      mode: 0
+    };
+  }
+  if (pg[message.guild.id].mode === 1) {
+    // This section will contain swears!
+    if (message.content.includes("fuck")) {
+      message.delete()
+    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+    }
+    if (message.content.includes("ass")) {
+      message.delete()
+      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+      }
+      if (message.content.includes("bastard")) {
+        message.delete()
+        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+        }
+        if (message.content.includes("bitch")) {
+          message.delete()
+          message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+          }
+          if (message.content.includes("dick")) {
+            message.delete()
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+            }
+            if (message.content.includes("bollocks")) {
+              message.delete()
+              message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+              }
+              if (message.content.includes("crap")) {
+                message.delete()
+                message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                }
+                if (message.content.includes("cunt")) {
+                  message.delete()
+                  message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                  }
+                  if (message.content.includes("frigger")) {
+                    message.delete()
+                    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                    }
+                    if (message.content.includes("heck")) {
+                      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "You're on thin ice, " + message.author)
+                      }
+                      if (message.content.includes("frick")) {
+                        message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "You're on thin ice, " + message.author)
+                        }
+                        if (message.content.includes("shit")) {
+                          message.delete()
+                          message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                          }
+                          if (message.content.includes("nigg")) {
+                            message.delete()
+                            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                            }
+                            if (message.content.includes("niga")) {
+                              message.delete()
+                              message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                              }
+                              if (message.content.includes("niger")) {
+                                message.delete()
+                                message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                                }
+                                if (message.content.includes("negro")) {
+                                  message.delete()
+                                  message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                                  }
+                                  if (message.content.includes("whore")) {
+                                    message.delete()
+                                    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                                    }
+                                    if (message.content.includes("twat")) {
+                                      message.delete()
+                                      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+                                      }
   }
   const Prefix = require ("./commands/prefix.js")
   let prefixjson = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
