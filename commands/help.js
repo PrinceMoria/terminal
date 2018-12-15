@@ -150,7 +150,7 @@ module.exports.run = async (client, message, args) => {
         .setTitle("Commands:")
         .setDescription("Terminal: A moderation bot. Do " + prefix + "help (command) to get more info.")
         .addField("Bot Admins:", "`shutdown`, `blacklist`, `gleave`")
-        .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`")
+        .addField("Punishment:", "`kick`, `ban`, `unban`, `softban`, `hackban`, `mute`, `unmute`, `blind`, `unblind`")
         .addField("Roles:", "`addrole`, `removerole`, `autorole`")
         .addField("Messages:", "`censor`, `pg`, `lockdown`, `purge`, `invites`, `announce`, `ticket`, `poll`, `delete`")
         .addField("Info:", "`serverinfo`, `botinfo`, `channelinfo`, `userinfo`")
