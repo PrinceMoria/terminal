@@ -43,6 +43,10 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+  let messageArray = message.content.split(" ");
+  const args = message.content.trim().split(/ +/g);
+  let command = messageArray[0].toLowerCase();
+
   if (message.author.bot) return;
   if (message.channel.type === "dm") return message.author.send("**/" + message.author.username + "/DM** \n Sorry, but commands in my DMs have been disabled. Please try it in a server." )
   const Censor = require ("./commands/censor.js")
@@ -52,7 +56,10 @@ client.on('message', message => {
       word: "none"
     };
   }
-  const PG = require ("./commands/censor.js")
+  if (message.content.toLowerCase().includes(censor[message.guild.id])) {
+    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, but that word has been censored.")
+  }
+  const PG = require ("./commands/pg.js")
   let pg = JSON.parse(fs.readFileSync("./pg.json", "utf8"));
   if (!pg[message.guild.id]) { 
     pg[message.guild.id] = {
@@ -61,73 +68,73 @@ client.on('message', message => {
   }
   if (pg[message.guild.id].mode === 1) {
     // This section will contain swears!
-    if (message.content.includes("fuck")) {
+    if (message.content.toLowerCase().includes("fuck")) {
       message.delete()
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
     }
-    if (message.content.includes("ass")) {
+    if (message.content.toLowerCase().includes("ass")) {
       message.delete()
       message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
       }
-      if (message.content.includes("bastard")) {
+      if (message.content.toLowerCase().includes("bastard")) {
         message.delete()
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
         }
-        if (message.content.includes("bitch")) {
+        if (message.content.toLowerCase().includes("bitch")) {
           message.delete()
           message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
           }
-          if (message.content.includes("dick")) {
+          if (message.content.toLowerCase().includes("dick")) {
             message.delete()
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
             }
-            if (message.content.includes("bollocks")) {
+            if (message.content.toLowerCase().includes("bollocks")) {
               message.delete()
               message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
               }
-              if (message.content.includes("crap")) {
+              if (message.content.toLowerCase().includes("crap")) {
                 message.delete()
                 message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                 }
-                if (message.content.includes("cunt")) {
+                if (message.content.toLowerCase().includes("cunt")) {
                   message.delete()
                   message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                   }
-                  if (message.content.includes("frigger")) {
+                  if (message.content.toLowerCase().includes("frigger")) {
                     message.delete()
                     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                     }
-                    if (message.content.includes("heck")) {
+                    if (message.content.toLowerCase().includes("heck")) {
                       message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "You're on thin ice, " + message.author)
                       }
-                      if (message.content.includes("frick")) {
+                      if (message.content.toLowerCase().includes("frick")) {
                         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "You're on thin ice, " + message.author)
                         }
-                        if (message.content.includes("shit")) {
+                        if (message.content.toLowerCase().includes("shit")) {
                           message.delete()
                           message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                           }
-                          if (message.content.includes("nigg")) {
+                          if (message.content.toLowerCase().includes("nigg")) {
                             message.delete()
                             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                             }
-                            if (message.content.includes("niga")) {
+                            if (message.content.toLowerCase().includes("niga")) {
                               message.delete()
                               message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                               }
-                              if (message.content.includes("niger")) {
+                              if (message.content.toLowerCase().includes("niger")) {
                                 message.delete()
                                 message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                                 }
-                                if (message.content.includes("negro")) {
+                                if (message.content.toLowerCase().includes("negro")) {
                                   message.delete()
                                   message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                                   }
-                                  if (message.content.includes("whore")) {
+                                  if (message.content.toLowerCase().includes("whore")) {
                                     message.delete()
                                     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                                     }
-                                    if (message.content.includes("twat")) {
+                                    if (message.content.toLowerCase().includes("twat")) {
                                       message.delete()
                                       message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
                                       }
@@ -171,13 +178,11 @@ client.on('message', message => {
     };
   }
   if (invites[message.guild.id].block === 1) {
-    if (message.content.includes("discord.gg")) {
+    if (message.content.toLowerCase().includes("discord.gg")) {
     message.delete()
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot post discord server invites as administrators have blocked it!")
   }}
-  let messageArray = message.content.split(" ");
-  let command = messageArray[0].toLowerCase();
-  let args = messageArray.slice(1);
+
 
   if (!command.startsWith(prefix)) return;
 
