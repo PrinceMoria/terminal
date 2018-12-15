@@ -35,6 +35,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + `<@${tomute.id}> has been blinded for ${ms(ms(mutetime))}`);
 
     setTimeout(function() {
+        if(!tomute.roles.has(gRole.id)) return 
         tomute.removeRole(muterole.id);
         message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + `<@${tomute.id}> has been unblinded.`);
     }, ms(mutetime));

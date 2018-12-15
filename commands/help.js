@@ -138,6 +138,9 @@ module.exports.run = async (client, message, args) => {
      if (args.includes("pg")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**PG Mode:** A command that turns on PG mode. This blocks all swears in the server. Usage: >_pg (on/off)")
     } else {
+    if (args.includes("unblind")) {
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Unblind:** A command that unblinds a person. Usage: >_pg (on/off)")
+    } else {
 
         
         
@@ -155,7 +158,7 @@ module.exports.run = async (client, message, args) => {
         .addField("Music:", "`play`, `join`, `leave`, `pause`, `resume`, `volume`");
      message.channel.send("**/" + message.guild + "/" + message.channel.name + "/**")
      message.channel.send(serverembed);
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     
 };
 module.exports.help = {

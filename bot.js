@@ -81,10 +81,22 @@ client.on('message', message => {
           message.delete()
           message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
           }
+          if (message.content.toLowerCase().includes("slut")) {
+            message.delete()
+            message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+            }
+            if (message.content.toLowerCase().includes("pussy")) {
+              message.delete()
+              message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+              }
           if (message.content.toLowerCase().includes("dick")) {
             message.delete()
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
             }
+            if (message.content.toLowerCase().includes("penis")) {
+              message.delete()
+              message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
+              }
             if (message.content.toLowerCase().includes("bollocks")) {
               message.delete()
               message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot swear as this server is in PG mode!")
