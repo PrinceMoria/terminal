@@ -143,7 +143,7 @@ module.exports.run = async (client, message, args) => {
     } else {
      if (args.includes("pin")) {
             message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "**Pin:** A command that pins a message by it's ID. Usage: >_pin (id)")
-
+    } else {
         
         
         let serverembed = new Discord.RichEmbed()
