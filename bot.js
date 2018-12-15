@@ -43,21 +43,19 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  let messageArray = message.content.split(" ");
-  const args = message.content.trim().split(/ +/g);
-  let command = messageArray[0].toLowerCase();
-
   if (message.author.bot) return;
   if (message.channel.type === "dm") return message.author.send("**/" + message.author.username + "/DM** \n Sorry, but commands in my DMs have been disabled. Please try it in a server." )
   const Censor = require ("./commands/censor.js")
   let censor = JSON.parse(fs.readFileSync("./censor.json", "utf8"));
   if (!censor[message.guild.id]) { 
     censor[message.guild.id] = {
-      word: "none"
+      word: "terminal sucks"
     };
   }
-  if (message.content.toLowerCase().includes(censor[message.guild.id])) {
-    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, but that word has been censored.")
+  if (message.content.toLowerCase().includes(censor[message.guild.id].word)) {
+    if (message.member.hasPermission("MANAGE_MESSAGES")) return
+    message.delete(50)
+    message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot say that word as administrators have blocked it!")
   }
   const PG = require ("./commands/pg.js")
   let pg = JSON.parse(fs.readFileSync("./pg.json", "utf8"));
@@ -182,7 +180,10 @@ client.on('message', message => {
     message.delete()
     message.channel.send("**/" + message.guild + "/" + message.channel.name + "/** \n  " + "Sorry, " + message.author + ", you cannot post discord server invites as administrators have blocked it!")
   }}
-
+  
+  let messageArray = message.content.split(" ");
+  let command = messageArray[0].toLowerCase();
+  let args = messageArray.slice(1);
 
   if (!command.startsWith(prefix)) return;
 

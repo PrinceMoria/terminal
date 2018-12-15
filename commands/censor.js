@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 	let censor = JSON.parse(fs.readFileSync("./censor.json", "utf8"));
 	if (!args[0]) { 
 		censor[message.guild.id] = {
-			word: "none"
+			word: "terminal suckså"
 		};
 		fs.writeFile("./censor.json", JSON.stringify(censor), (err) => {
 			if (err) console.log(err);
